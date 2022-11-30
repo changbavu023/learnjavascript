@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chương 2: Biến</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Bài 1:</h1>
-    <p id="p-chu"> Chữ: 123</p>
+    <p id="p-chu">XYZ</p>
+
+    <!-- <p id="p-chu"> Tôi là {{ten}}</p>  -->
+
     <p id="p-so123">Số</p>
+    <!-- <p id="p-so123">Năm sinh: {{bien namsinh}}</p> -->
+
     <p id="p-gioitinh">Giới tính</p>
     <script>
-        var chu="abc",so=123,gioitinh=false;
-        console.log(chu,so,gioitinh);
-        var s_chu=document.getElementById("p-chu");
-        console.log(s_chu);
-        var s_so=document.getElementById("p-so");
-        console.log(s_so);
-        var s_gioitinh=document.getElementById("p-gioitinh");
-        s_gioitinh.innerHTML=gioitinh;
+      var chu = "Vũ",
+        so = 123,
+        gioitinh = false;
+      console.log(chu, so, gioitinh);
+
+      var s_chu = document.getElementById("p-chu");
+      //Lấy value trên thẻ html-p
+      console.log("value: s_chu:", s_chu.innerHTML);
+      console.log("tag html: p-chu:", s_chu);
+      //   console.log("Tôi là:", s_chu);
+
+      //Gám value cho thẻ html-p
+      s_chu.innerHTML = "Tôi là Vũ";
+
+      var s_so = document.getElementById("p-so");
+      console.log(s_so);
+
+      //tạo 1 biến: s_gioitinh => gán dữ liệu thẻ <p id="p-gioitinh">
+      var s_gioitinh = document.getElementById("p-gioitinh");
+      //s_gioitinh.innerHTML : dữ liệu HTMNL củ      console.log("dữ liệu id=p-gioitinh:", s_gioitinh.innerHTML);a thẻ <p id="p-gioitinh">
+
+      s_gioitinh.innerHTML = gioitinh;
     </script>
-</body>
+  </body>
 </html>
