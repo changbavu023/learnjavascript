@@ -12,7 +12,7 @@
 
     <!-- <p id="p-chu"> Tôi là {{ten}}</p>  -->
 
-    <p id="p-so123">Số</p>
+    <p id="p-so">Số</p>
     <!-- <p id="p-so123">Năm sinh: {{bien namsinh}}</p> -->
 
     <p id="p-gioitinh">Giới tính</p>
@@ -33,6 +33,7 @@
 
       var s_so = document.getElementById("p-so");
       console.log(s_so);
+      s_so.innerHTML = "Năm sinh:" + so;
 
       //tạo 1 biến: s_gioitinh => gán dữ liệu thẻ <p id="p-gioitinh">
       var s_gioitinh = document.getElementById("p-gioitinh");
