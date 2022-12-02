@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Toán tử quan hệ</h1>
     <p id="p-1">a = 3</p>
-    <p id="p-2">b = 5</p>
-    <p id="p-3">a có lớn hơn b hay không?</p>
-    <p id="p-4">Kết quả:false</p>
-    <script>
-        var a=1;
-        var b=4;
-        var c="a có nhỏ hơn b?";
-        var d="kết quả:";
-        var p1=document.getElementById("p-1")
+    <!-- thẻ p có id là "p-1" , có value (innerHTML): a = 3  -->
 
-        console.log("")
-        
+    <p id="p-2">b = 5</p>
+    <!-- thẻ p có id là "p-2" , có value (innerHTML): b = 5  -->
+
+    <p id="p-3">a có lớn hơn b hay không?</p>
+    <!-- thẻ p có id là "p-3" , có value (innerHTML): a có lớn hơn b hay không? -->
+
+    <p id="p-4">Kết quả: false</p>
+    <!-- thẻ p có id là "p-4" , có value (innerHTML): Kết quả: false -->
+
+    <script>
+      //Đổi value (innerHTML) thành script
+      //Khai bao biến giá trị
+      var a = 5;
+      var b = 4;
+      var c = "a có nhỏ hơn b?";
+      var d = "kết quả:";
+
+      //khai bao biến thẻ html
+      var p1 = document.getElementById("p-1");
+      var p2 = document.getElementById("p-2");
+
+      //thay đổi giá trị innerHTML từ biến vào các thẻ html (p)
+      p1.innerHTML = "a = " + a;
+
+      console.log("");
     </script>
-</body>
+  </body>
 </html>
