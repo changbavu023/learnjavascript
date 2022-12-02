@@ -23,17 +23,26 @@
     <script>
       //Đổi value (innerHTML) thành script
       //Khai bao biến giá trị
-      var a = 5;
-      var b = 4;
-      var c = "a có nhỏ hơn b?";
-      var d = "kết quả:";
+      var a = 7;
+      var b = 5;
+      var c = a + " có nhỏ hơn " + b + "?";
+      var ketqua = a != b; //Toán tử quan hệ so sánh (<,>,<=,>=) 
+      /*Biến ketqua thực hiện phép so sánh 2 giá trị của a và b
+      Vậy a có khác b hay không?
+      a có giá trị là 7 mà b có giá trị là 5 => kết quả của a khác với kết quả của b nên xuất kq là true */
+      var d = "kết quả:" + ketqua;
 
       //khai bao biến thẻ html
       var p1 = document.getElementById("p-1");
       var p2 = document.getElementById("p-2");
+      var p3 = document.getElementById("p-3");
+      var p4 = document.getElementById("p-4");
 
       //thay đổi giá trị innerHTML từ biến vào các thẻ html (p)
       p1.innerHTML = "a = " + a;
+      p2.innerHTML = "b = " + b;
+      p3.innerHTML = c;
+      p4.innerHTML = d;
 
       console.log("");
     </script>
