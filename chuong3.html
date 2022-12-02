@@ -26,7 +26,7 @@
       var a = 7;
       var b = 5;
       var c = a + " có nhỏ hơn " + b + "?";
-      var ketqua = a != b; //Toán tử quan hệ so sánh (<,>,<=,>=) 
+      var ketqua = a != b; //Toán tử quan hệ so sánh (<,>,<=,>=)
       /*Biến ketqua thực hiện phép so sánh 2 giá trị của a và b
       Vậy a có khác b hay không?
       a có giá trị là 7 mà b có giá trị là 5 => kết quả của a khác với kết quả của b nên xuất kq là true */
@@ -45,6 +45,47 @@
       p4.innerHTML = d;
 
       console.log("");
+    </script>
+    <h1>Toán tử logic: Điều kiện and (&&)</h1>
+    <p>true && true => true</p>
+    <p>true && false => false</p>
+    <p>false && false => false</p>
+
+    <script>
+      var a = 5;
+      var b = 7;
+      var c = a > b; //false
+      var d = a > 0; //true
+      var f = c && d; //false && true => false
+      //biến f được tạo bởi giá trị c và d
+      console.log("ketqua &&:", f);
+
+      var g = b > a; //true
+      var h = d && g; //true
+      console.log("ket qua h:", h);
+    </script>
+    <h1>Toán tử logic điều kiện OR (||)</h1>
+    <p>true || true => true</p>
+    <p>true || false => true</p>
+    <p>false || false => false</p>
+    <script>
+      var a = 3;
+      var b = 8;
+      var c = a == b; //false
+      var d = a != b; //true
+      var f = c || d; //true
+      /*biến f được tạo bởi giá trị c hoặc d */
+      var g = a <b; //true
+      var h = d || g; //true
+      var j = !g; //false
+      var k = !h; //false
+      var l = !k; //true
+      var q = j || k //false
+      console.log("Ket qua ||:",f);
+      console.log("Ket qua h:",h);
+      console.log("Ket qua l:",l);
+      console.log("Ket qua q:",q);
+
     </script>
   </body>
 </html>
