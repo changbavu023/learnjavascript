@@ -85,7 +85,26 @@
       console.log("Ket qua h:",h);
       console.log("Ket qua l:",l);
       console.log("Ket qua q:",q);
-
+    </script>
+    <h1>Toán tử gán</h1>
+    <script>
+      var a = 5;
+      // var b += a; //b sẽ = b + a,mà b chưa có giá trị báo lỗi vì b chưa có giá trị
+      // console.log("Ket qua b:",b); 
+      a += 2; //a = a + 2 = 5 + 2 = 7
+      console.log("Ket qua a:",a); //ket qua:7
+      a -= 3; //a = a - 3 = 7 - 3 = 4
+      console.log("Ket qua a-=3:",a);
+      a *= 4; //a = a * 4 = 4 * 4 = 16
+      console.log("Ket qua a*=4:",a);
+      a /= 2; //a = a / 2 = 16 / 2 = 8
+      console.log("Ket qua a/=2:",a);
+      a = 10;
+      a %= 3; //a = a % 3 = 10 % 3 = 3 dư 1,% thì lấy số dư => a = 1
+      console.log("Ket qua a%=3:",a);
+      a = 7;
+      a /= 2; //a = a / 2 = 7 / 2 = 3 dư 1,/ là do javasrcipt a là number nên sẽ chia ra lấy số thập phân => a = 3.5
+      console.log("Ket qua a/=2:",a); 
     </script>
   </body>
 </html>
