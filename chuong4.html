@@ -8,12 +8,81 @@
   </head>
   <body>
     <script>
+      /*
+      - functionName: xuatDuLieuValue
+      - input: variable ( bien)
+      - process: console.log value=...
+      - output: none
+      */
+      function xuatDuLieuValue(abc) {
+        // var abc = 101;
+        console.log("Function value = ", abc);
+      }
+
       var a = 10;
       var b = 5;
       var c = 7;
-      console.log('value =', a);
-      console.log('value =', b);
-      console.log('value =', c);
+
+      //Cach 1
+      console.log("value =", a);
+      console.log("value =", b);
+      console.log("value =", c);
+
+      //Chac 2
+      xuatDuLieuValue(a);
+      xuatDuLieuValue(b);
+      xuatDuLieuValue(c);
+
+      //3a + 4b + 5a = a(3+5) + 4b
+
+      /*
+      Yeu cau: viet func tinh tong cua 2 so
+      - functionName:  tongCua2So
+      - input: so1,so2
+      - process: kq = so1+so2
+      - output: return kq
+      */
+      function tongCua2So(a, b) {
+        var kq = a + b;
+        console.log("Tong:", kq);
+        return kq;
+      }
+
+      //Tinh tong nam sinh 1999 va 2000
+      tongCua2So(1999, 2000);
+      xuatDuLieuValue(b);
+      //Tính tổng số của 305 và 200
+      tongCua2So(305, 200);
+      //Function trừ
+      function truCua2So(a, b) {
+        var kq = a - b;
+        console.log("Kết quả:" + a + "-" + b + "=" + kq);
+        //ket qua 10 - 5 = 5
+        return kq;
+      }
+      truCua2So(a, b);
+      //Trừ của số 99 và 2000
+      truCua2So(99, 2000);
+      //Function Nhân của 2 số
+      function nhanCua2So(a, b) {
+        var kq = a * b;
+        console.log("Kết quả " + a + "*" + b + "=" + kq);
+        return kq;
+      }
+      nhanCua2So(a, b);
+      //Function Chua của 2 số
+      function chiaCua2So(a, b) {
+        if (b == 0) {
+          console.log(a + " không thể chia cho 0");
+          return 0;
+        }
+        var kq = a / b;
+        console.log("Kết quả " + a + "/" + b + "=" + kq);
+        return kq;
+      }
+      chiaCua2So(a, b);
+      //Chia của kết quả 8 và 0
+      chiaCua2So(8, 0);
     </script>
   </body>
 </html>
