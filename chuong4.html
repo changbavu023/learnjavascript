@@ -83,6 +83,30 @@
       chiaCua2So(a, b);
       //Chia của kết quả 8 và 0
       chiaCua2So(8, 0);
+
+      /*Tinh tuoi gia dinh
+      - em sinh nam 2004
+      - anh sinh nam 1989
+      - Tinh tuoi cua em bao nhieu tuoi?
+      - Tuoi cua anh bao nhieu tuoi?
+      - Anh hon em bao nhieu tuoi?
+      */
+      var tuoiEm = 2004;
+      var tuoiAnh = 1989;
+      function tinhTuoiHienTai(tuoiEm, tuoiAnh) {
+        var kq = 2022 - tuoiEm;
+        console.log("Kết quả:" + kq);
+        return kq;
+      }
+      tinhTuoiHienTai(tuoiEm);
+      tinhTuoiHienTai(tuoiAnh);
+
+      function tinhTuoiAnhHonEm(tuoiEm, tuoiAnh) {
+        var kq = tuoiEm - tuoiAnh;
+        console.log("Anh hơn em: " + kq);
+        return kq;
+      }
+      tinhTuoiAnhHonEm(tuoiEm, tuoiAnh);
     </script>
   </body>
 </html>
