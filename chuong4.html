@@ -31,7 +31,8 @@
       //Chac 2
       xuatDuLieuValue(a);
       xuatDuLieuValue(b);
-      xuatDuLieuValue(c);
+      var none = xuatDuLieuValue(c);
+      console.log("gia tri ham ko co return", none);
 
       //3a + 4b + 5a = a(3+5) + 4b
 
@@ -49,7 +50,9 @@
       }
 
       //Tinh tong nam sinh 1999 va 2000
-      tongCua2So(1999, 2000);
+      var bienReturn = tongCua2So(1999, 2000);
+      console.log("gia tri ham  co return", bienReturn);
+
       xuatDuLieuValue(b);
       //Tính tổng số của 305 và 200
       tongCua2So(305, 200);
@@ -91,22 +94,50 @@
       - Tuoi cua anh bao nhieu tuoi?
       - Anh hon em bao nhieu tuoi?
       */
-      var tuoiEm = 2004;
-      var tuoiAnh = 1989;
-      function tinhTuoiHienTai(tuoiEm, tuoiAnh) {
-        var kq = 2022 - tuoiEm;
+      var namSinhEm = 2004;
+      var namSinhAnh = 1989;
+      function tinhTuoiHienTai(namSinhEm, namSinhAnh) {
+        var kq = 2022 - namSinhEm;
         console.log("Kết quả:" + kq);
         return kq;
       }
-      tinhTuoiHienTai(tuoiEm);
-      tinhTuoiHienTai(tuoiAnh);
+      tinhTuoiHienTai(namSinhEm);
+      tinhTuoiHienTai(namSinhAnh);
 
-      function tinhTuoiAnhHonEm(tuoiEm, tuoiAnh) {
-        var kq = tuoiEm - tuoiAnh;
+      function tinhTuoiAnhHonEm(namSinhEm, namSinhAnh) {
+        var kq = namSinhEm - namSinhAnh;
         console.log("Anh hơn em: " + kq);
         return kq;
       }
-      tinhTuoiAnhHonEm(tuoiEm, tuoiAnh);
+      var x = tinhTuoiAnhHonEm(namSinhEm, namSinhAnh);
+      //Cách 2:không viết hàm mới
+      //Console.log
+      //Nam hien tai:
+      //Tuoi cua em: xx
+      //Tuoi cua anh: yy
+      //Anh hon em: zz
+      var namHienTai = 2022;
+      var tuoiCuaEm = namHienTai - namSinhEm;
+      var tuoiCuaAnh = namHienTai - namSinhAnh;
+      var anhHonEm = tuoiCuaAnh - tuoiCuaEm;
+      console.log("Năm hiện tại: " + namHienTai);
+      console.log("Tuổi của em: " + tuoiCuaEm);
+      console.log("Tuổi của anh: " + tuoiCuaAnh);
+      console.log("Anh hơn em: " + anhHonEm + "tuổi");
+
+      //Cach 3: dung function co san
+
+      console.log("Năm hiện tại: " + namHienTai);
+      console.log("Tuổi của em: " + truCua2So(namHienTai, namSinhEm));
+      console.log("Tuổi của anh: " + truCua2So(namHienTai, namSinhAnh));
+      console.log("Anh hơn em: " + truCua2So(namSinhEm, namSinhAnh) + "tuổi");
+
+      //Callback function
+      var tuoiChechLech = truCua2So(
+        truCua2So(namHienTai, namSinhAnh),
+        truCua2So(namHienTai, namSinhEm)
+      );
+      console.log("Callback Anh hơn em: " + tuoiChechLech + " tuổi");
     </script>
   </body>
 </html>
