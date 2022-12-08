@@ -7,12 +7,43 @@
     <title>Bài tập 1</title>
   </head>
   <body>
-    <input id="" value="" placeholder="Nhap a" />
-    <input id="" value="" placeholder="Nhap b" />
-    <button>+</button>
-    <h1>ket qua a + b =</h1>
+    <input id="btn1" placeholder="Nhap a" />
+    <br />
+    <input id="btn2" placeholder="Nhap b" />
+    <select id="chonpheptoan">
+      <option>+</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/</option>
+    </select>
+    <br />
+    <button onclick="main()">Submit</button>
+    <br />
+    <br />
+    <input id="ketqua" placeholder="Kết quả" />
   </body>
   <script>
+    function main() {
+      var a = document.getElementById("btn1").value;
+      var b = document.getElementById("btn2").value;
+      var chon = document.getElementById("chonpheptoan").value;
+      var kq = 0;
+      if (chon == "+") {
+        kq = parseInt(a) + parseInt(b);
+      } else if (chon == "-") {
+        kq = a - b;
+      } else if (chon == "*") {
+        kq = a * b;
+      } else {
+        if (b == 0) {
+          alert("Không thể chia được cho 0");
+          return kq;
+        } else {
+          kq = a / b;
+        }
+      }
+      document.getElementById("ketqua").value = kq;
+    }
     /*
         Viet chuong trinh may tinh + - * / cua 2 so dc nguoi dung nhap
         Hien thi len giao dien web
