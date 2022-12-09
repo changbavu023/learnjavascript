@@ -20,7 +20,8 @@
     <button onclick="main()">Submit</button>
     <br />
     <br />
-    <input id="ketqua" placeholder="Kết quả" />
+    <input disabled id="ketqua" placeholder="Kết quả" />
+    <!-- <input id="ketqua" placeholder="Kết quả" /> -->
   </body>
   <script>
     function main() {
@@ -28,6 +29,45 @@
       var b = document.getElementById("ip2").value;
       var chon = document.getElementById("chonpheptoan").value;
       var kq = 0;
+      /* Testing:
+      - Kiểm tra để trống: OK
+      - Kiểm tra quy định value : phải là number (Tùy vào chương trình:string,boolean,...)
+      - Kiểm tra min max
+      - Kiem tra truong hop dac biet (vd: bài này là b không được = 0 đối với phép chia)
+      */
+      //NaN là not a number là không phải số
+      //isNaN("abc")=true , isNaN(123)=false
+
+      if (a == "") {
+        //neu a để trống ( chưa nhập )
+        //xu ly bao loi
+        alert("Bạn chưa nhập a");
+        return kq;
+      } else if (b == "") {
+        alert("Bạn chưa nhập b");
+        return kq;
+      }
+      if (isNaN(a) == true) {
+        //kiem tra du lieu cua a co phai chua hay ko?
+        alert("Bạn nhập sai kiểu dữ liệu của a");
+        return kq;
+      }
+      if (isNaN(b) == true) {
+        //kiem tra du lieu cua a co phai chua hay ko?
+        alert("Bạn nhập sai kiểu dữ liệu của b");
+        return kq;
+      }
+
+      //kiem tra value a >= 1 & a <= 10
+      if (a < 1 || a > 10) {
+        alert("Bạn phải nhập a tu 1-10");
+        return kq;
+      }
+      if (b < 1 || b > 100) {
+        alert("Bạn phải nhập b tu 1-100");
+        return kq;
+      }
+
       if (chon == "+") {
         kq = parseInt(a) + parseInt(b);
       } else if (chon == "-") {
