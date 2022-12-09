@@ -21,6 +21,7 @@
     <br />
     <br />
     <input disabled id="ketqua" placeholder="Kết quả" />
+    <p id="p1">Switch case</p>
     <!-- <input id="ketqua" placeholder="Kết quả" /> -->
   </body>
   <script>
@@ -29,6 +30,7 @@
       var b = document.getElementById("ip2").value;
       var chon = document.getElementById("chonpheptoan").value;
       var kq = 0;
+      var kq1 = 0;
       /* Testing:
       - Kiểm tra để trống: OK
       - Kiểm tra quy định value : phải là number (Tùy vào chương trình:string,boolean,...)
@@ -47,11 +49,13 @@
         alert("Bạn chưa nhập b");
         return kq;
       }
+
       if (isNaN(a) == true) {
         //kiem tra du lieu cua a co phai chua hay ko?
         alert("Bạn nhập sai kiểu dữ liệu của a");
         return kq;
       }
+
       if (isNaN(b) == true) {
         //kiem tra du lieu cua a co phai chua hay ko?
         alert("Bạn nhập sai kiểu dữ liệu của b");
@@ -68,21 +72,44 @@
         return kq;
       }
 
+      //Method 1: if else
       if (chon == "+") {
-        kq = parseInt(a) + parseInt(b);
+        kq1 = parseInt(a) + parseInt(b);
       } else if (chon == "-") {
-        kq = a - b;
+        kq1 = a - b;
       } else if (chon == "*") {
-        kq = a * b;
+        kq1 = a * b;
       } else {
         if (b == 0) {
           alert("Không thể chia được cho 0");
-          return kq;
+          return kq1;
         } else {
-          kq = a / b;
+          kq1 = a / b;
         }
       }
-      document.getElementById("ketqua").value = kq;
+      document.getElementById("ketqua").value = kq1;
+
+      //Method 2: switch case, kiem tra value cua 1 bien(1 ket qua)
+      switch (chon) {
+        case "+":
+          kq = parseFloat(a) + parseFloat(b);
+          // kq = Math.round(kq);
+          kq = kq.toFixed(2);
+          break;
+        case "-":
+          kq = a - b;
+          break;
+        case "*":
+          kq = a * b;
+          break;
+        case "/":
+          kq = a / b;
+          break;
+        default:
+          alert("Bạn phải chọn đúng cách tính");
+          break;
+      }
+      document.getElementById("p1").innerHTML = kq;
     }
     /*
         Viet chuong trinh may tinh + - * / cua 2 so dc nguoi dung nhap
