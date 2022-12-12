@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Giá trị tuyệt đối abs()
+      /*Lưu ý, phương thức abs() sẽ:
+    Trả về 0 nếu giá trị ban đầu là null
+    Trả về NaN nếu giá trị ban đầu không phải là một số*/
+      /* 
+        var a = Math.abs(8.75);
+        var b = Math.abs(-8.75);
+        var c = Math.abs(null);
+        var d = Math.abs("JavaScript");
+        var e = Math.abs(-7+3);
+        
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+    */
+
+      //Ngẫu nhiên random() Lưu ý: Phương thức random() có thể trả về số 0, nhưng không bao giờ trả về số 1
+      /*
+        var a = Math.random();
+        console.log(a);
+    */
+
+      //Căn bậc 2 của một số sqrt() Lưu ý: Phương thức sqrt() sẽ trả về NaN nếu giá trị ban đầu là số âm.
+      /*    var a = Math.sqrt(0);
+        var b = Math.sqrt(1);
+        var c = Math.sqrt(4);
+        var d = Math.sqrt(81);
+        var e = Math.sqrt(49);
+        var f = Math.sqrt(-4);
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+        console.log(f);
+    */
+      //Lũy thừa của 2 số xác định pow() tương đương với x mũ y trong đại số
+      /*
+        var a = Math.pow(5,2);
+        document.write(a);
+    */
+
+      //Phương thức ceil() dùng để làm tròn một số "LÊN" số nguyên gần nó nhất
+      //Lưu ý: Nếu giá trị ban đầu là một số nguyên thì nó sẽ không được làm tròn
+      /*
+        var a = Math.ceil(3.60); //Trả về 4
+        var b = Math.ceil(3.40); //Trả về 4
+        var c = Math.ceil(3); //Trả về 3
+        var d = Math.ceil(-3.60); //Trả về -3
+        var e = Math.ceil(-3.40); //Trả về -3
+        var f = Math.ceil(-3); //Trả về -3
+
+        document.write(a + "<br>");
+        document.write(b + "<br>");
+        document.write(c + "<br>");
+        document.write(d + "<br>");
+        document.write(e + "<br>");
+        document.write(f + "<br>");
+    */
+
+      //Phương thức floor() dùng để làm tròn một số "XUỐNG" số nguyên gần nó nhất
+      //Lưu ý: Nếu giá trị ban đầu là một số nguyên thì nó sẽ không được làm tròn
+      /*
+        var a = Math.floor(3.60); //Trả về 3
+        var b = Math.floor(3.40); //Trả về 3
+        var c = Math.floor(3); //Trả về 3
+        var d = Math.floor(-3.60); //Trả về -4
+        var e = Math.floor(-3.40); //Trả về -4
+        var f = Math.floor(-3); //Trả về -3
+    */
+
+      //Phương thức round() dùng để làm tròn một số đến số nguyên gần nó nhất.
+      //Lưu ý: Nếu giá trị ban đầu là một số nguyên thì nó sẽ không được làm tròn
+      /*
+        var a = Math.round(3.60); //Trả về 4
+        var b = Math.round(3.50); //Trả về 4
+        var c = Math.round(3.49); //Trả về 3
+        var d = Math.round(-3.60); //Trả về -4
+        var e = Math.round(-3.50); //Trả về -3
+        var f = Math.round(-3.49); //Trả về -3
+    */
+
+      //Phương thức max() dùng để trả về số "lớn" nhất trong danh sách các đối số.
+      //Lưu ý, phương thức max() sẽ:
+      /*
+        Trả về NaN nếu trong các đối số của phương thức max() có tồn tại đối số không phải là số.
+        Trả về -Infinity nếu phương thức max() không có đối số.
+    */
+      /*
+        var a = Math.max(0, 16, -3, 5.25, 100, -1); //Trả về 100
+        var b = Math.max(0, "JavaScript", -3, 5.25, 100, -1); //Trả về NaN
+        var c = Math.max(); //Trả về -Infinity
+
+        document.write(a + "<br>");
+        document.write(b + "<br>");
+        document.write(c + "<br>");
+   */
+      //Phương thức min() dùng để trả về số "nhỏ" nhất trong danh sách các đối số.
+      //Lưu ý, phương thức min() sẽ:
+      /*
+        Trả về NaN nếu trong các đối số của phương thức min() có tồn tại đối số không phải là số.
+        Trả về Infinity nếu phương thức min() không có đối số.
+    */
+      /*
+        var a = Math.min(0, 16, -3, 5.25, 100, -1); //Trả về -3
+        var b = Math.min(0, "JavaScript", -3, 5.25, 100, -1); //Trả về NaN
+        var c = Math.min(); //Trả về Infinity
+
+        document.write(a + "<br>");
+        document.write(b + "<br>");
+        document.write(c + "<br>");
+    */
+    </script>
+  </body>
+</html>
