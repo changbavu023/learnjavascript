@@ -10,6 +10,8 @@
     <h1>Vòng lập for</h1>
     <p id="p1"></p>
     <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
   </body>
   <script>
     var s1 = document.getElementById("p1");
@@ -40,6 +42,62 @@
     for (var i = 1; i <= 100; i++) {
       str = str + "," + i;
       s2.innerHTML = str;
+    }
+
+    //tim thuc an trong hop, tim che
+    /*
+    co 10 hop,
+    lay 1 hop => mo len xem => nêu thấy lay hop do, ngung
+    => neu khong thay , mo hop tiep theo
+
+    chon hop thu nhat
+    while(dieu kien ( trure / false [neu chua tim thay hop]){       
+        mo ra xem
+        co phai <che> hay ko?
+            - co thi ngung
+            - khong co thi di tiep
+        
+        chon hop tiep theo
+    }
+    */
+    var i = 0;
+    while (i <= 10) {
+      //xu ly voi i
+      //xu ly xong
+      console.log(i);
+
+      i++; //=1, =2, 11
+    }
+
+    //xua ra so chan cua cac so tu 1-10 : 2,4,6,8
+    i = 1;
+    s3 = document.getElementById("p3");
+    var str3 = "";
+    while (i <= 9) {
+      var a = i % 2; //lenh % chia lay so du, vd: 10%3=1, 10/3=3.333 , 4%2=0, 4/2=2
+      var str = "khi i=" + i + " thi a=" + a;
+      //   console.log("gia tri i:", i);
+      //   console.log("gia tri a:", a);
+      console.log(str);
+
+      if (a == 0) {
+        str3 += "," + i;
+        s3.innerHTML = str3;
+      }
+      i++;
+    }
+    i = 1;
+    s4 = document.getElementById("p4");
+    var str4 = "";
+    while (i <= 10) {
+      var a = i % 2;
+      var str = "khi i=" + i + "thi a=" + a;
+      console.log(str);
+      if (a == 1) {
+        str4 += "," + i;
+        s4.innerHTML = str4;
+      }
+      i++;
     }
   </script>
 </html>
