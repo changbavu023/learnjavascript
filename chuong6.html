@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chương 6 - Vòng lập</title>
+  </head>
+  <body>
+    <h1>Vòng lập for</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+  </body>
+  <script>
+    var s1 = document.getElementById("p1");
+
+    s1.innerHTML = "1,2,3,4,5,6,7,8,9,10";
+
+    var maxLoop = 10;
+    var str = "";
+    var s2 = document.getElementById("p2");
+    s2.innerHTML = str; //1
+
+    //1,2
+    // str = str + ",2";
+    // s2.innerHTML = str;
+
+    // str = str + ",3";
+    // s2.innerHTML = str;
+
+    // str = str + ",4";
+    // s2.innerHTML = str;
+
+    /*Lặp for
+    for([khoi tao gia tri bien dem]; [gia tri lon nhat; lap bao nhieu lan],[gia tri tang/giam theo quy luat])
+    {
+        //thuc hien cac lenh giong nhau, nhung thay doi value
+    }
+    */
+    for (var i = 1; i <= 100; i++) {
+      str = str + "," + i;
+      s2.innerHTML = str;
+    }
+  </script>
+</html>
