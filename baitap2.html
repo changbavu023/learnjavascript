@@ -8,15 +8,25 @@
   </head>
   <body>
     <p id="p1"></p>
+    <p id="p2"></p>
   </body>
   <script>
     var wc = "";
+    var nn = "";
     var s1 = document.getElementById("p1");
+    var s2 = document.getElementById("p2");
     s1.innerHTML = wc;
-    for (var i = 0; i <= 10000; i++) {
-      if (i >= 1990 && i <= 2022) {
-        wc = wc + "," + i;
-        s1.innerHTML = wc;
+    s2.innerHTML = nn;
+
+    for (var i = 1990; i <= 2022; i += 4) {
+      wc = wc + "," + i;
+      s1.innerHTML = wc;
+    }
+
+    for (var i = 1990; i <= 2022; i++) {
+      if (i % 100 != 0 && i % 4 == 0) {
+        nn = nn + "," + i;
+        s2.innerHTML = nn;
       }
     }
   </script>
