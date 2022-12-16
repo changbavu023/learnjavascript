@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /*
+    -Đối tượng là các dạng Object 
+    -Anh với em là object person
+    con chó có object là animal
+    -Trong object person có 2 object khác là nam và nữ
+    phân biệt được sự khác nhau thông qua cân nặng, chiều cao, độ tuổi, khuôn mặt, tên,..
+    Tất cả gọi là thuộc tính
+    */
+    var personVu = {
+      Ten: "Chang Ba Vu",
+      Namsinh: 2004,
+      Gioitinh: "Nam",
+      Chieucao: 175,
+      Cannang: 50,
+    };
+    /*
+    personVu: là object
+    Ten: là tên thuộc tính
+    "Chang Ba Vu": là giá trị của thuộc tính ["Tên"]
+    */
+
+    console.log(personVu);
+
+    var ccc = "Namsinh";
+    console.log("nam sinh:" + personVu[ccc]);
+    //truyen ten thuoc tinh vao param
+    console.log("Chieu cao:" + personVu["Chieucao"]);
+
+    /*
+    Vòng lặp for ... in được sử dụng để lặp qua các thuộc tính của đối tượng
+    */
+    /*
+    personVu
+    - lấy tên thuộc tính: for ...in => Ten
+    - Lấy value ( gia tri của thuoc tinh): personVu['ten thuoc tinh']
+    */
+
+    var x;
+    for (x in personVu) {
+      if (x == "Chieucao") {
+        console.log(x + ": " + personVu[x] + "cm");
+      } else if (x == "Cannang") {
+        console.log(x + ": " + personVu[x] + "kg");
+      } else {
+        console.log(x + ": " + personVu[x]);
+      }
+    }
+  </script>
+</html>
