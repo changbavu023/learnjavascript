@@ -27,7 +27,17 @@
       if (i % 100 != 0 && i % 4 == 0) {
         nn = nn + "," + i;
         s2.innerHTML = nn;
+      } else if (i % 400 == 0) {
+        nn = nn + "," + i;
+        s2.innerHTML = nn;
       }
     }
+
+    var a = 10;
+    var b = 4;
+    var c = a % b;
+    var d = a / b;
+    console.log(c);
+    console.log(d);
   </script>
 </html>
