@@ -55,5 +55,28 @@
         console.log(x + ": " + personVu[x]);
       }
     }
+
+    /*Array: mãng ( danh sách)
+    vd: 1,2,3,4,5,6 => dsSo = [1,2,4,5,6]
+
+    */
+
+    var personAn = {
+      Ten: "Ng An",
+      Namsinh: 2004,
+      Gioitinh: "Nam",
+      Chieucao: 175,
+      Cannang: 50,
+      TrinhDo: [1, 2, 3, 4, 5, 6],
+    };
+
+    console.log(personAn.TrinhDo);
+    //For of để hiển thị các thành phần trong mãng
+    for (var t of personAn.TrinhDo) {
+      console.log(t);
+    }
+    for (var y of personVu.Ten) {
+      console.log(y);
+    }
   </script>
 </html>
