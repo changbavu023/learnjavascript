@@ -9,7 +9,7 @@
   <body></body>
   <script>
     /*
-    -Đối tượng là các dạng Object 
+    -Đối tượng là các dạng Object
     -Anh với em là object person
     con chó có object là animal
     -Trong object person có 2 object khác là nam và nữ
@@ -77,6 +77,31 @@
     }
     for (var y of personVu.Ten) {
       console.log(y);
+    }
+    /*
+    -Break:dùng để thoát vòng lặp
+    -Continue:dùng để bỏ qua
+    */
+    for (var a in personAn) {
+      if (a == "Gioitinh") {
+        console.log(a + ": " + personAn[a]);
+        break;
+      }
+
+      console.log(a + ": " + personAn[a]);
+    }
+
+    console.log("==================");
+
+    for (var a in personAn) {
+      console.log("----bat dau: " + a);
+
+      if (a == "Gioitinh") {
+        console.log(a + ": " + personAn[a]);
+        continue;
+      }
+
+      console.log("tiep tuc");
     }
   </script>
 </html>
