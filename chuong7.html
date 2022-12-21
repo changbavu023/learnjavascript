@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //Cách 1: Khởi tạo object trực tiếp
+    var animal = {
+      ten: "cho",
+      loai: "husky",
+      canNang: 30,
+      gioiTinh: false, //true là nam, false là nữ
+    };
+    console.log(animal);
+    //properties là có name và value VD: "ten" gọi là name của properties,"cho" là value của properties.ten
+    //method là phương thức (hàm có return dữ liệu và hàm ko có return dữ liệu)
+
+    //Cách 2: Cách tạo trực tiếp từ new Object(); gọi properties.name xong gán value cho nó
+    var car = new Object();
+    car.ten = "honda";
+    car.tocDo = 120;
+    car.loai = "xe may";
+    console.log(car);
+
+    //Cách 3: Khởi tạo object thông qua constructor
+    function player(ten1, doTuoi1, viTri1) {
+      this.ten = ten1;
+      this.doTuoi = doTuoi1;
+      this.viTri = viTri1;
+
+      this.ghiBan = function () {
+        console.log("Vao........");
+      };
+    }
+    var messi = new player("Messi", 35, "Tien dao");
+    console.log(messi);
+
+    var cr7 = new player("Ronadol", 37, "Tien ve");
+    console.log(cr7);
+
+    var vu = "345";
+    var an = new player();
+    var loan = new player();
+
+    //lấy value của properties
+    console.log(cr7.ten);
+    console.log(messi.viTri);
+    console.log(cr7["doTuoi"]);
+    console.log(vu.charAt(0));
+
+    console.log(cr7.ghiBan());
+
+    console.log(Object.values(car));
+  </script>
+</html>
