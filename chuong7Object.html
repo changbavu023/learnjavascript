@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //Object.assign()
+    /*
+    Phương thức này được sử dụng để sao chép các thuộc tính 
+    có thể đếm được và sở hữu từ một đối tượng nguồn sang một 
+    đối tượng đích
+    */
+    var concho = new Object();
+    concho.ten = "husky";
+    concho.canNang = 5;
+    concho.giongLoai = true;
+
+    var conVit = {
+      ten: "vit xiem",
+      canNang: 6,
+      bay: "5km/h",
+    };
+    console.log(concho);
+    console.log(conVit);
+
+    var animal = {
+      giongLoai: true,
+      ten: "vit xiem",
+      canNang: 6,
+      bay: "5km/h",
+    };
+    console.log("dung thu cong:", animal);
+    // muon lay loai vit co thuoc tinh cua cho
+    var animal1 = Object.assign(conVit, concho);
+    console.log("dung Object.assign:", animal1);
+    console.log("dung Object.assign/conVit:", conVit);
+
+    // var animal2 = Object.assign(concho, conVit);
+    // console.log("dung Object.assign:", animal2);
+
+    //Object.create()
+    /*
+    Phương pháp này được sử dụng để tạo một đối tượng mới với 
+    các thuộc tính và đối tượng nguyên mẫu được chỉ định.
+    */
+    var conMeo = Object.create(concho);
+    console.log(conMeo);
+
+    console.log(Object.keys(animal));
+    console.log(Object.values(animal));
+    //Object.entries()
+    /*
+    Phương thức này trả về một mảng 
+    với các mảng của các tên thuộc tính, giá trị.
+    */
+    console.log(Object.entries(animal));
+
+    var chuoi = "svd123a";
+    chuoi.length;
+    console.log(chuoi.length);
+    /*Các Object của javascript:
+    -Object:khởi tạo các đối tượng: new Object(), Object.create(concho),Object.assign(conVit, concho)
+      và khai thác các thuộc tính của đối tượng: Object.keys(),Object.values(),Object.entries()
+   -string:chuỗi "", 
+   */
+  </script>
+</html>
