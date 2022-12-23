@@ -8,8 +8,9 @@
   </head>
   <body></body>
   <script>
+    //khai báo properties cho object và đồng thời có thể khóa giá trị của properties thông qua writable:false
     // const object1 = {};
-
+    // console.log(object1);
     // Object.defineProperties(object1, {
     //   property1: {
     //     value: 42,
@@ -19,10 +20,26 @@
     //     value: 53,
     //     writable: false,
     //   },
+    //   ten: {
+    //     value: "Vu",
+    //     writable: true,
+    //   },
     // });
-
+    // console.log(object1.property1);
     // console.log(object1.property2);
-    // expected output: 42
+    // console.log(object1);
+    // object1.ten = "An";
+    // console.log(object1);
+    // object1.property2 = 99;
+    // console.log(object1);
+    // const obj2 = {
+    //   property1: 42,
+    //   property2: 53,
+    //   ten: "Vu",
+    // };
+    // obj2.ten = "An";
+    // console.log("obj2:", obj2);
+    //expected output: 42
 
     //===================
     // const object1 = {};
@@ -36,31 +53,53 @@
     // // throws an error in strict mode
 
     // console.log(object1.property1);
-    // expected output: 42
+    // // expected output: 42
 
     //====================
+
+    //Khóa dữ liệu thuộc tính và không cho thêm sửa xóa thuộc tính của object freeze();
+    //defineProperty vẫn có thể thay đổi được thuộc tính còn freeze thì không được hoàn toàn
     // const obj = {
-    //   prop: 78,
+    //   prop: 98,
+    //   ten: "VU",
     // };
 
-    // Object.freeze(obj);
-
-    // obj.prop = 33;
+    // // Object.freeze(obj);
+    // obj.ten = "An";
+    // obj.prop = 53;
+    // obj.loai = "nguoi";
+    // delete obj.ten;
     // // Throws an error in strict mode
 
-    // console.log(obj.prop);
+    // console.log(obj);
     // expected output: 42
 
     //====================
-    // const entries = new Map([
-    //   ["foo", "bar"],
-    //   ["baz", 42],
-    // ]);
+    //fromEntries dùng để chuyển đổi 1 mảng string trong đó có 1 cặp key values trở thành kiểu dữ liệu object
+    const entries = new Map([
+      ["foo", "bar"],
+      ["baz", 42],
+      ["ten", "Vu"],
+      ["namsinh", 2000],
+    ]);
+    console.log(entries);
+    const obj = Object.fromEntries(entries);
+    console.log(obj);
 
-    // const obj = Object.fromEntries(entries);
+    var objE = {};
+    console.log(objE);
 
-    // console.log(obj);
-    // // expected output: Object { foo: "bar", baz: 42 }
+    for (var ent of entries) {
+      console.log(ent[0]);
+      console.log(ent[1]);
+      Object.defineProperty(objE, ent[0], {
+        value: ent[1],
+      });
+    }
+
+    console.log(objE);
+
+    // expected output: Object { foo: "bar", baz: 42 }
 
     //===================
 
