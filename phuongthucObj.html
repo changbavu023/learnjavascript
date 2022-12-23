@@ -52,14 +52,68 @@
     // expected output: 42
 
     //====================
-    const entries = new Map([
-      ["foo", "bar"],
-      ["baz", 42],
-    ]);
+    // const entries = new Map([
+    //   ["foo", "bar"],
+    //   ["baz", 42],
+    // ]);
 
-    const obj = Object.fromEntries(entries);
+    // const obj = Object.fromEntries(entries);
 
-    console.log(obj);
-    // expected output: Object { foo: "bar", baz: 42 }
+    // console.log(obj);
+    // // expected output: Object { foo: "bar", baz: 42 }
+
+    //===================
+
+    // const object1 = {
+    //   property1: 42,
+    // };
+
+    // const descriptor1 = Object.getOwnPropertyDescriptor(object1, "property1");
+
+    // console.log(descriptor1.configurable);
+    // // expected output: true
+
+    // console.log(descriptor1.value);
+    // // expected output: 42
+
+    //========================
+    // const object1 = {
+    //   property1: 42,
+    // };
+
+    // const descriptors1 = Object.getOwnPropertyDescriptors(object1);
+
+    // console.log(descriptors1.property1.writable);
+    // // expected output: true
+
+    // console.log(descriptors1.property1.value);
+    // // expected output: 42
+
+    //=======================
+
+    // const object1 = {
+    //   a: 1,
+    //   b: 2,
+    //   c: 3,
+    // };
+
+    // console.log(Object.getOwnPropertyNames(object1));
+    // // expected output: Array ["a", "b", "c"]
+
+    //=======================
+
+    // const object1 = {};
+    // const a = Symbol("a");
+    // const b = Symbol.for("b");
+
+    // object1[a] = "localSymbol";
+    // object1[b] = "globalSymbol";
+
+    // const objectSymbols = Object.getOwnPropertySymbols(object1);
+
+    // console.log(objectSymbols.length);
+    // // expected output: 2
+
+    //=============================
   </script>
 </html>
