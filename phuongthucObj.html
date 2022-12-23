@@ -104,68 +104,82 @@
     //===================
 
     //Object.getOwnPropertyDescriptor() dùng để kiểm trả thuộc tính có tồn tại hay không nếu có .configurable == true còn lấy value thì .value
-    const object1 = {
-      property1: 42,
-    };
-
-    const descriptor1 = Object.getOwnPropertyDescriptor(object1, "property1");
-
-    console.log(descriptor1.configurable);
-    // expected output: true
-
-    console.log(descriptor1.value);
-    // expected output: 42
-
-    var des2 = Object.getOwnPropertyDescriptor(object1, "ten");
-    console.log(des2);
-    console.log(object1.ten);
-
-    function layValuePro(person) {
-      //Code bad
-      //console.log("Tuoi cua ban: " + person.tuoi);
-      //Code good
-      var kt = Object.getOwnPropertyDescriptor(person, "tuoi");
-      if (kt && kt.configurable == true) {
-        console.log("Tuoi cua ban: " + kt.value);
-      } else {
-        console.log("Ko tim thay Tuoi cua ban");
-      }
-    }
-
-    var personVu = {
-      ten: "Vu",
-      tuoi: 19,
-    };
-    layValuePro(personVu);
-
-    var personAn = {
-      ten: "An",
-      namSinh: 1989,
-    };
-    layValuePro(personAn);
-    //========================
     // const object1 = {
     //   property1: 42,
     // };
 
+    // const descriptor1 = Object.getOwnPropertyDescriptor(object1, "property1");
+
+    // console.log(descriptor1.configurable);
+    // // expected output: true
+
+    // console.log(descriptor1.value);
+    // // expected output: 42
+
+    // var des2 = Object.getOwnPropertyDescriptor(object1, "ten");
+    // console.log(des2);
+    // console.log(object1.ten);
+
+    // function layValuePro(person) {
+    //   //Code bad
+    //   //console.log("Tuoi cua ban: " + person.tuoi);
+    //   //Code good
+    //   var kt = Object.getOwnPropertyDescriptor(person, "tuoi");
+    //   if (kt && kt.configurable == true) {
+    //     console.log("Tuoi cua ban: " + kt.value);
+    //   } else {
+    //     console.log("Ko tim thay Tuoi cua ban");
+    //   }
+    // }
+
+    // var personVu = {
+    //   ten: "Vu",
+    //   tuoi: 19,
+    // };
+    // layValuePro(personVu);
+
+    // var personAn = {
+    //   ten: "An",
+    //   namSinh: 1989,
+    // };
+    // layValuePro(personAn);
+    //========================
+    // const object1 = {
+    //   property1: 42,
+    //   ten: "Vu",
+    //   namsinh: 1232,
+    // };
+
     // const descriptors1 = Object.getOwnPropertyDescriptors(object1);
 
-    // console.log(descriptors1.property1.writable);
+    // if (descriptors1.property1.writable) {
+    //   console.log(descriptors1.property1.writable);
+    // }
+    // if (descriptors1.property5) {
+    //   console.log(descriptors1.property5.writable);
+    // }
+    // if (descriptors1.ten) {
+    //   console.log(descriptors1.ten.value);
+    // }
+
     // // expected output: true
 
     // console.log(descriptors1.property1.value);
-    // // expected output: 42
+    // expected output: 42
 
     //=======================
-
+    //Object.getOwnPropertyNames dùng để lấy keys của object
     // const object1 = {
+    //   ten: "vu",
     //   a: 1,
     //   b: 2,
     //   c: 3,
     // };
 
     // console.log(Object.getOwnPropertyNames(object1));
-    // // expected output: Array ["a", "b", "c"]
+    // console.log(Object.keys(object1));
+    // console.log(Object.values(object1));
+    // expected output: Array ["a", "b", "c"]
 
     //=======================
 
@@ -183,29 +197,50 @@
 
     //=============================
 
-    // const prototype1 = {};
-    // const object1 = Object.create(prototype1);
+    //const , let  , var : dung de khai bao bien
+    //const => bien ko thay doi du lieu
+    //let => co the thay doi du lieu
+    //var => tuy bien
+    //Object.getPrototypeOf dùng để kiểm tra 2 object có cùng prototype (Loại của properties) hay không
+    // var prototype1 = {
+    //   ten: "Vu",
+    // };
+    // var object1 = Object.create(prototype1);
 
-    // console.log(Object.getPrototypeOf(object1) === prototype1);
-    // // expected output: true
+    // console.log(prototype1);
+    // console.log(object1);
+
+    // var object2 = Object.assign(prototype1);
+    // console.log(object2);
+
+    // console.log(
+    //   "Object.create() - object1 vs prototype1:",
+    //   Object.getPrototypeOf(object1) === prototype1
+    // ); //true
+    // console.log(
+    //   "Object.assign() - object2 vs prototype1:",
+    //   Object.getPrototypeOf(object2) === prototype1
+    // ); //false
 
     //======================
-
+    //Object.is dùng để kiểm tra 2 giá trị có giống nhau hay không
     // Object.is(25, 25); // true
     // Object.is("foo", "foo"); // true
     // Object.is("foo", "bar"); // false
     // Object.is(null, null); // true
 
     //==========================
-
+    //Object.isExtensible dùng để khóa values nhưng có thông báo để nhận biết
     // const object1 = {};
-
     // console.log(Object.isExtensible(object1));
+    // object1.ten = "Vu";
+    // console.log(object1);
     // // expected output: true
 
     // Object.preventExtensions(object1);
-
+    // object1.namSinh = 1920;
     // console.log(Object.isExtensible(object1));
+    // console.log(object1);
     // // expected output: false
 
     //======================================
@@ -252,14 +287,15 @@
     // }
 
     //===============================================
-
+    //Object.seal dùng để khóa các properties của object không cho thêm sửa xóa properties nhưng giá trị vẫn thay đổi được
     // const object1 = {
     //   property1: 42,
     // };
 
     // Object.seal(object1);
     // object1.property1 = 33;
-    // console.log(object1.property1);
+    // object1.ten = "vu";
+    // console.log(object1);
     // // expected output: 33
 
     // delete object1.property1; // cannot delete when sealed
