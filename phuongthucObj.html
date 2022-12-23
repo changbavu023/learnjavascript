@@ -76,45 +76,73 @@
 
     //====================
     //fromEntries dùng để chuyển đổi 1 mảng string trong đó có 1 cặp key values trở thành kiểu dữ liệu object
-    const entries = new Map([
-      ["foo", "bar"],
-      ["baz", 42],
-      ["ten", "Vu"],
-      ["namsinh", 2000],
-    ]);
-    console.log(entries);
-    const obj = Object.fromEntries(entries);
-    console.log(obj);
+    // const entries = new Map([
+    //   ["foo", "bar"],
+    //   ["baz", 42],
+    //   ["ten", "Vu"],
+    //   ["namsinh", 2000],
+    // ]);
+    // console.log(entries);
+    // const obj = Object.fromEntries(entries);
+    // console.log(obj);
 
-    var objE = {};
-    console.log(objE);
+    // var objE = {};
+    // console.log(objE);
 
-    for (var ent of entries) {
-      console.log(ent[0]);
-      console.log(ent[1]);
-      Object.defineProperty(objE, ent[0], {
-        value: ent[1],
-      });
-    }
+    // for (var ent of entries) {
+    //   console.log(ent[0]);
+    //   console.log(ent[1]);
+    //   Object.defineProperty(objE, ent[0], {
+    //     value: ent[1],
+    //   });
+    // }
 
-    console.log(objE);
+    // console.log(objE);
 
     // expected output: Object { foo: "bar", baz: 42 }
 
     //===================
 
-    // const object1 = {
-    //   property1: 42,
-    // };
+    //Object.getOwnPropertyDescriptor() dùng để kiểm trả thuộc tính có tồn tại hay không nếu có .configurable == true còn lấy value thì .value
+    const object1 = {
+      property1: 42,
+    };
 
-    // const descriptor1 = Object.getOwnPropertyDescriptor(object1, "property1");
+    const descriptor1 = Object.getOwnPropertyDescriptor(object1, "property1");
 
-    // console.log(descriptor1.configurable);
-    // // expected output: true
+    console.log(descriptor1.configurable);
+    // expected output: true
 
-    // console.log(descriptor1.value);
-    // // expected output: 42
+    console.log(descriptor1.value);
+    // expected output: 42
 
+    var des2 = Object.getOwnPropertyDescriptor(object1, "ten");
+    console.log(des2);
+    console.log(object1.ten);
+
+    function layValuePro(person) {
+      //Code bad
+      //console.log("Tuoi cua ban: " + person.tuoi);
+      //Code good
+      var kt = Object.getOwnPropertyDescriptor(person, "tuoi");
+      if (kt && kt.configurable == true) {
+        console.log("Tuoi cua ban: " + kt.value);
+      } else {
+        console.log("Ko tim thay Tuoi cua ban");
+      }
+    }
+
+    var personVu = {
+      ten: "Vu",
+      tuoi: 19,
+    };
+    layValuePro(personVu);
+
+    var personAn = {
+      ten: "An",
+      namSinh: 1989,
+    };
+    layValuePro(personAn);
     //========================
     // const object1 = {
     //   property1: 42,
