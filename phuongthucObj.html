@@ -115,5 +115,90 @@
     // // expected output: 2
 
     //=============================
+
+    // const prototype1 = {};
+    // const object1 = Object.create(prototype1);
+
+    // console.log(Object.getPrototypeOf(object1) === prototype1);
+    // // expected output: true
+
+    //======================
+
+    // Object.is(25, 25); // true
+    // Object.is("foo", "foo"); // true
+    // Object.is("foo", "bar"); // false
+    // Object.is(null, null); // true
+
+    //==========================
+
+    // const object1 = {};
+
+    // console.log(Object.isExtensible(object1));
+    // // expected output: true
+
+    // Object.preventExtensions(object1);
+
+    // console.log(Object.isExtensible(object1));
+    // // expected output: false
+
+    //======================================
+
+    // const object1 = {
+    //   property1: 42,
+    // };
+
+    // console.log(Object.isFrozen(object1));
+    // // expected output: false
+
+    // Object.freeze(object1);
+
+    // console.log(Object.isFrozen(object1));
+    // // expected output: true
+
+    //=========================================
+
+    // const object1 = {
+    //   property1: 42,
+    // };
+
+    // console.log(Object.isSealed(object1));
+    // // expected output: false
+
+    // Object.seal(object1);
+
+    // console.log(Object.isSealed(object1));
+    // // expected output: true
+
+    //==========================================
+
+    // const object1 = {};
+
+    // Object.preventExtensions(object1);
+
+    // try {
+    //   Object.defineProperty(object1, "property1", {
+    //     value: 42,
+    //   });
+    // } catch (e) {
+    //   console.log(e);
+    //   // expected output: TypeError: Cannot define property property1, object is not extensible
+    // }
+
+    //===============================================
+
+    // const object1 = {
+    //   property1: 42,
+    // };
+
+    // Object.seal(object1);
+    // object1.property1 = 33;
+    // console.log(object1.property1);
+    // // expected output: 33
+
+    // delete object1.property1; // cannot delete when sealed
+    // console.log(object1.property1);
+    // // expected output: 33
+
+    //================================================
   </script>
 </html>
