@@ -14,6 +14,7 @@
   </body>
   <script>
     //Khái niệm: Array mảng chứa các thành phần đối tượng
+    //mang bat đầu với vị trí index =0 , kết thúc tại vị trí mang.length - 1
     //Khai báo trực tiếp:
     var s1 = document.getElementById("p1");
     var nums = [1, 2, 3, 4, 5];
@@ -40,6 +41,7 @@
     }
     s2.innerHTML = chuoi;
     //Khai báo theo đối tượng
+    var s3 = document.getElementById("p3");
     var persons = new Array();
     persons[0] = {
       ten: "Vu",
@@ -51,7 +53,16 @@
       namSinh: 2005,
       gioiTinh: false,
     });
-    console.log(persons);
-    console.log("Số items của mảng: " + persons.length);
+    var chuoi3 = "";
+    for (var i = 0; i < persons.length; i++) {
+      console.log(i);
+      console.log(persons[i]);
+      chuoi3 +=
+        "* Ten:" + persons[i].ten + "*Nam sinh:" + persons[i].namSinh + "<br/>";
+
+      console.log(chuoi3);
+    }
+    s3.innerHTML = chuoi3;
+    // console.log("Số items của mảng: " + persons.length);
   </script>
 </html>
