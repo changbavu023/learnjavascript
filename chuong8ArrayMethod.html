@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var array1 = [1, 2, 3, 4, 5];
+    var array2 = [6, 7, 8, 9];
+    //concat() dùng để kết hợp 2 hoặc nhiều mảng với nhau để tạo thành mảng mới
+    var array3 = array1.concat(array2);
+    console.log(array3);
+
+    function sole(numa) {
+      if (numa % 2 > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    var a = sole(5);
+    console.log(a);
+    function sochan(numb) {
+      if (numb % 2 === 0) {
+        console.log(numb);
+        return true;
+      } else {
+        return false;
+      }
+    }
+    var b = sochan(7);
+    console.log(b);
+    // for (var i = 0; i < array3.length; i++) {
+    //   if (sochan(array3[i]) == true) {
+    //     console.log(array3[i]);
+    //   }
+    // }
+    // for (var i = 0; i < array3.length; i++) {
+    //   if (sole(array3[i]) == true) {
+    //     console.log(array3[i]);
+    //   }
+    // }
+
+    //every() dùng để duyệt các thành phần trong mảng trả về kết quả true hoặc false
+    var c = array3.every(sochan);
+    console.log(c);
+    var array4 = [2, 4, 6];
+    var d = array4.every(sochan);
+    console.log(d);
+
+    //filter(), forEach(),findIndex(),find(),includes(),shift(),unshift(),pop(),push()
+  </script>
+</html>
