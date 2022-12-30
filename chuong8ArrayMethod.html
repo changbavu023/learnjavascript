@@ -79,6 +79,24 @@
     // console.log(pets.includes("cat"));
 
     // console.log(pets.includes("at"));
+    // var hotels = [101, 102, 103, 104, 304, 506, 108];
+    // var key = 306;
+    // var kq = false;
+    // for (var x of hotels) {
+    //   if (x == key) {
+    //     kq = true;
+    //     break;
+    //   }
+    // }
+    // console.log("Kết quả trả về:" + kq);
+    // for (var i = 0; i < hotels.length; i++) {
+    //   if (hotels[i] == key) {
+    //     kq = true;
+    //     break;
+    //   }
+    // }
+    // kq = hotels.includes(key);
+    // console.log("Kết quả trả về:" + kq);
 
     //Phương thức find() trả về phần tử đầu tiên trong mảng được cung cấp đáp ứng chức năng kiểm tra được cung cấp. Nếu không có giá trị nào thỏa mãn chức năng kiểm tra, undefinednó sẽ được trả về.
     // const array1 = [5, 12, 8, 130, 44];
@@ -86,9 +104,79 @@
     // const found = array1.find((element) => element > 10);
 
     // console.log(found);
+    var cars = [
+      { ten: "BMW", speed: 100 },
+      { ten: "Mecedes", speed: 90 },
+      { ten: "Toyota", speed: 120 },
+      { ten: "Honda", speed: 80 },
+      { ten: "Isuzu", speed: 130 },
+      { ten: "Suzuki", speed: 100 },
+      { ten: "Ford", speed: 80 },
+    ];
+    var mySpeed = 90;
+    var mycar;
+    var kq = false;
+    // for (var i = 0; i < cars.length; i++) {
+    //   if (cars[i].speed == speed) {
+    //     console.log("Ten xe theo yeu cau la: " + cars[i].ten);
+    //     break;
+    //   } else if (i == cars.length - 1) {
+    //     console.log("Khong tim thay xe theo yeu cau cua ban!!!");
+    //   }
+    // }
 
-    //Phương thức findIndex() này trả về chỉ mục của phần tử đầu tiên trong một mảng thỏa mãn chức năng kiểm tra được cung cấp. Nếu không có phần tử nào thỏa mãn chức năng kiểm tra, -1 được trả về
-    // const array1 = [5, 12, 8, 130, 44];
+    // for (var x of cars) {
+    //   if (x.speed == speed) {
+    //     kq = true;
+    //     mycar = x;
+    //     break;
+    //   }
+    // }
+    // if (kq == true) {
+    //   console.log("Ten xe theo yeu cau la:" + mycar.ten);
+    // } else {
+    //   console.log("Khong tim thay xe theo yeu cau cua ban!!!");
+    // }
+
+    // var mycar = cars.find(function (item) {
+    //   return item.speed == mySpeed;
+    // });
+    // if (mycar) {
+    //   console.log("Ten xe theo yeu cau la:" + mycar.ten);
+    // } else {
+    //   console.log("Khong tim thay xe theo yeu cau cua ban!!!");
+    // }
+
+    // console.log(mycar);
+
+    // var vuCar = cars.find(function (item1) {
+    //   return item1.ten == "Vinfast";
+    // });
+    // if (vuCar) {
+    //   console.log("Xe cua ban: " + vuCar.ten + " toc do: " + vuCar.speed);
+    // } else {
+    //   console.log("Khong tim thay xe theo yeu cau cua ban!!!");
+    // }
+
+    /*Phương thức findIndex() này trả về chỉ mục của phần tử đầu tiên trong một mảng 
+    thỏa mãn chức năng kiểm tra được cung cấp. Nếu không có phần tử nào thỏa mãn chức năng 
+    kiểm tra, -1 được trả về*/
+    // var array1 = [5, 12, 8, 130, 44]; //mang chay tu 0, => -1 chinh la vi tri index khong tim thay
+    // var index = -1;
+    // var num = 130;
+    // console.log(array1[index]);
+    // //tim gia tri index trong mang thoa dieu kien =num
+    // for (var i = 0; i < array1.length; i++) {
+    //   if (array1[i] == num) {
+    //     console.log(array1[i] + " là index: " + i);
+    //   }
+    // }
+
+    // var findIndex = array1.findIndex(function (item) {
+    //   return item == num;
+    // });
+    // console.log(findIndex);
+    // console.log(array1[findIndex]);
 
     // const isLargeNumber = (element) => element > 13;
 
