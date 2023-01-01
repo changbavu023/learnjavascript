@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đồng hồ bấm giờ</title>
+  </head>
+  <body>
+    <h1>Stopwatch</h1>
+    <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+    <button id="buttonStart">Start</button>
+    <button id="buttonStop">Stop</button>
+    <button id="buttonReset">Reset</button>
+  </body>
+  <script>
+    window.onload = function () {
+      var seconds = 0;
+      var tens = 0;
+      var appendTens = document.getElementById("tens");
+      var appendSeconds = document.getElementById("seconds");
+      var btnStart = document.getElementById("buttonStart");
+      var btnStop = document.getElementById("buttonStop");
+      var btnReset = document.getElementById("buttonReset");
+      var interval;
+
+      function startTime() {
+        tens++;
+        if (tens <= 9) {
+          appendTens.innerHTML = "0" + tens;
+        }
+        if (tens > 9) {
+          appendTens.innerHTML = tens;
+        }
+        if (tens > 99) {
+          seconds++;
+          tens = 0;
+          appendSeconds.innerHTML = "0" + seconds;
+          appendTens.innerHTML = "0" + 0;
+        }
+        if (seconds > 9) {
+          appendSeconds.innerHTML = seconds;
+        }
+      }
+      btnStart.onclick = function () {
+        clearInterval(interval);
+        interval = setInterval(startTime, 10);
+      };
+      btnStop.onclick = function () {
+        clearInterval(interval);
+      };
+      btnReset.onclick = function () {
+        clearInterval(interval);
+        tens = "0" + 0;
+        seconds = "0" + 0;
+        appendTens.innerHTML = tens;
+        appendSeconds.innerHTML = seconds;
+      };
+    };
+  </script>
+</html>
